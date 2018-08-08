@@ -81,7 +81,8 @@ And at the beginning of the Network, I do some pre-processing:
 
 The final step was to run the simulator to see how well the car was driving around track one. 
 
-During the testing, the performance on the first track is fine, but not good on the second track. To improve the driving behavior further, I would like to collect more training data from the second track and re-train the model.   
+During the testing, the performance on the first track is fine (please download `/videos/video.mp4`), but not good on the second track. To improve the driving behavior further, I would like to collect more training data from the second track and re-train the model.  
+
 
 #### 2. Final Model Architecture
 

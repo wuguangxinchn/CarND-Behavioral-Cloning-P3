@@ -5,7 +5,7 @@ import sklearn
 import numpy as np
 import matplotlib.pyplot as plt
 from keras.models import Sequential, Model
-from keras.layers import Flatten, Lambda, Dense, Convolution2D, Cropping2D
+from keras.layers import Flatten, Dropout, Lambda, Dense, Convolution2D, Cropping2D
 from keras.layers.pooling import MaxPooling2D
 
 ### Returns the lines from a driving log 
@@ -88,11 +88,11 @@ def nVidiaModel():
     model.add(Convolution2D(64,3,3, activation='relu'))
     model.add(Flatten())
     model.add(Dense(100))
-    #model.add(Dropout(.5))
+    model.add(Dropout(.5))
     model.add(Dense(50))
-    #model.add(Dropout(.5))
+    model.add(Dropout(.5))
     model.add(Dense(10))
-    #model.add(Dropout(.5))
+    model.add(Dropout(.5))
     model.add(Dense(1))
     return model
 

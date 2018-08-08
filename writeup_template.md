@@ -52,7 +52,7 @@ The model.py file contains the code for training and saving the convolution neur
 
 I am using nVidia Autonomous Car Group model, and the car can drive the complete first track. 
 
-The model includes RELU layers to introduce nonlinearity (code line 20), and the data is normalized in the model using a Keras lambda layer (code line 18). 
+More details please see below sections.
 
 #### 2. Attempts to reduce overfitting in the model
 
@@ -85,9 +85,45 @@ During the testing, the performance on the first track is fine, but not good on 
 
 #### 2. Final Model Architecture
 
-The final model architecture is as below (by model.summary()): 
+The final model architecture is as below:  
 
-
+model.summary()
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+lambda_2 (Lambda)            (None, 160, 320, 3)       0         
+_________________________________________________________________
+cropping2d_2 (Cropping2D)    (None, 90, 320, 3)        0         
+_________________________________________________________________
+conv2d_6 (Conv2D)            (None, 43, 158, 24)       1824      
+_________________________________________________________________
+conv2d_7 (Conv2D)            (None, 20, 77, 36)        21636     
+_________________________________________________________________
+conv2d_8 (Conv2D)            (None, 8, 37, 48)         43248     
+_________________________________________________________________
+conv2d_9 (Conv2D)            (None, 6, 35, 64)         27712     
+_________________________________________________________________
+conv2d_10 (Conv2D)           (None, 4, 33, 64)         36928     
+_________________________________________________________________
+flatten_2 (Flatten)          (None, 8448)              0         
+_________________________________________________________________
+dense_2 (Dense)              (None, 100)               844900    
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 100)               0         
+_________________________________________________________________
+dense_3 (Dense)              (None, 50)                5050      
+_________________________________________________________________
+dropout_2 (Dropout)          (None, 50)                0         
+_________________________________________________________________
+dense_4 (Dense)              (None, 10)                510       
+_________________________________________________________________
+dropout_3 (Dropout)          (None, 10)                0         
+_________________________________________________________________
+dense_5 (Dense)              (None, 1)                 11        
+=================================================================
+Total params: 981,819
+Trainable params: 981,819
+Non-trainable params: 0
 
 #### 3. Creation of the Training Set & Training Process
 
